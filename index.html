@@ -1,0 +1,67 @@
+
+	<script>
+		var hist= new Array("Nenhuma ação","Nenhuma ação","Nenhuma ação","Nenhuma ação");
+		var jogos=new Array();
+		jogos[0] = 'Teste4';
+		jogos[1] = 'Teste3';
+		jogos[2] = 'Teste2';
+		jogos[3] = 'Teste';
+		if(!Array.prototype.indexOf) {
+			Array.prototype.indexOf = function(needle) {
+				for(var i = 0; i < this.length; i++)
+					if(this[i] === needle) return i;
+			
+				return -1;
+			};
+		}
+
+		function rand(x){
+			return Math.floor(Math.random() * x)
+		}   
+
+		function historico(){
+		for (i = 0; i < 4; i++){
+			var x = hist[hist.length-1];
+			if (x == undefined){
+				document.write("Nenhuma ação<br/>");
+			}
+			else{
+				document.write(x+"<br/>");
+			}
+		}
+		}
+
+		function randomf(){
+			if (hist.length >= 4) {
+			var y = (jogos[rand(jogos.length-1)]).toUpperCase()
+			}
+			else {
+			do {var y = (jogos[rand(jogos.length-1)]).toUpperCase()} while (hist.indexOf(y) > -1)
+			}
+			if (y == undefined){
+				document.getElementById("oquefazer").innerHTML = "NADA, POR ENQUANTO...";
+			}
+			else{
+				hist.push(y);
+				document.getElementById("oquefazer").innerHTML = y;
+				document.getElementById("histo").innerHTML = hist[hist.length-1]+"<br/>"+hist[hist.length-2]+"<br/>"+hist[hist.length-3]+"<br/>"+hist[hist.length-4];			
+				
+			}
+			
+		}
+	<!-- --></script>
+	<div style="width:500px;left:50%;position:absolute;margin-left:-250px">
+	<div style="background:#3a3a3a;text-align:center;color:#ffffff;font-weight:bold;height:243px;">
+	<br/><input type=submit value="SORTEAR NOVA AÇÃO" onclick="randomf()"><br/>
+	<br/>O QUE FAZER:<BR/>
+	<div id="oquefazer" style="font-size:28pt;font-family:helvetica;color:#e63333">
+	NADA, POR ENQUANTO...
+	</div><br/><br/>
+	</div>
+	<div style="background:#efefef;text-align:justify;">
+	<div style="background-color:#d8d8d8"> Últmas quatro ações:</div>
+	<div id="histo" style="margin: 5px 5px 5px 5px">
+	<script>historico()</script>
+	</div>
+	</div>
+	</div>
