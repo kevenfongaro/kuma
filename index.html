@@ -2,10 +2,12 @@
 	<script>
 		var hist= new Array("Nenhuma ação","Nenhuma ação","Nenhuma ação","Nenhuma ação");
 		var jogos=new Array();
-		jogos[0] = 'Grite na janela';
-		jogos[1] = 'Vá ao banheiro';
-		jogos[2] = 'Pule';
-		jogos[3] = 'Deite no chão';
+		jogos[0] = 'silêncio';
+		jogos[1] = 'desvio';
+		jogos[2] = 'escuta';
+		jogos[3] = 'rastros do outro';
+		jogos[4] = 'sonho';
+		jogos[5] = 'fora';
 		if(!Array.prototype.indexOf) {
 			Array.prototype.indexOf = function(needle) {
 				for(var i = 0; i < this.length; i++)
@@ -20,7 +22,7 @@
 		}   
 
 		function historico(){
-		for (i = 0; i < 4; i++){
+		for (i = 0; i < 6; i++){
 			var x = hist[hist.length-1];
 			if (x == undefined){
 				document.write("Nenhuma ação<br/>");
@@ -32,7 +34,7 @@
 		}
 
 		function randomf(){
-			if (hist.length >= 4) {
+			if (hist.length >= 6) {
 			var y = (jogos[rand(jogos.length-1)]).toUpperCase()
 			}
 			else {
