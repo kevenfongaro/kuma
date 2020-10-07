@@ -1,6 +1,6 @@
 
 	<script>
-		var hist= new Array("Nenhuma ação","Nenhuma ação","Nenhuma ação","Nenhuma ação");
+		var hist= new Array("Nenhuma","Nenhuma","Nenhuma","Nenhuma");
 		var jogos=new Array();
 		jogos[0] = 'silêncio';
 		jogos[1] = 'desvio';
@@ -25,7 +25,7 @@
 		for (i = 0; i < 6; i++){
 			var x = hist[hist.length-1];
 			if (x == undefined){
-				document.write("Nenhuma ação<br/>");
+				document.write("Nenhuma<br/>");
 			}
 			else{
 				document.write(x+"<br/>");
@@ -54,10 +54,10 @@
 	<!-- --></script>
 	<div style="width:100%;position:absolute">
 	<div style="background:#3a3a3a;text-align:center;color:#ffffff;font-weight:bold;height:243px;">
-	<br/><input type=submit value="SORTEAR NOVA AÇÃO" onclick="randomf()"><br/>
-	<br/>O QUE FAZER:<BR/>
+	<br/><input type=submit value="SORTEAR NOVA PALAVRA" onclick="randomf()"><br/>
+	<br/>SUA PALAVRA É:<BR/>
 	<div id="oquefazer" style="font-size:28pt;font-family:helvetica;color:#e63333">
-	NADA, POR ENQUANTO...
+	NENHUMA, POR ENQUANTO...
 	</div><br/><br/>
 	</div>
 	</div>
